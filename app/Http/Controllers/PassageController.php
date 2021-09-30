@@ -7,14 +7,10 @@ use Illuminate\Http\Request;
 
 class PassageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $passages = Passage::all()->sortBy('id','desc');
+        return json_encode($passages);
     }
 
     /**
@@ -38,15 +34,10 @@ class PassageController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Passage  $passage
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Passage $passage)
+    public function show()
     {
-        //
+        $passage = Passage::all()->sortBy('id','desc')->take(1);
+        return view('welcome', compact('passage'));
     }
 
     /**

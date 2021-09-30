@@ -14,7 +14,7 @@
                 </div>
                 <div class="question bg-white p-3 border-bottom">
                     <div>
-                        {{}}
+                        {!! $passage->passage !!}
                     </div>
                     <div class="d-flex flex-row align-items-center question-title">
                         <h3 class="text-danger">Q.</h3>
