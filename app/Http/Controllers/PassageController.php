@@ -36,7 +36,10 @@ class PassageController extends Controller
 
     public function show()
     {
-        $passage = Passage::all()->sortBy('id','desc')->take(1);
+        $passage = Passage::all()->sortBy('id')->first->get();
+        $passage_id = $passage->id;
+
+        $questions = $passage->questions;
         return view('welcome', compact('passage'));
     }
 

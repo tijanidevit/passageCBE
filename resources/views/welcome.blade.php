@@ -4,18 +4,32 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 
 <div class="container mt-5">
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-10 col-lg-10">
+    <h3 class="text-center mb-3">Computer Based Test</h3>
+    <div class="row">
+        <div class="col-md-7 col-lg-7">
             <div class="border">
                 <div class="question bg-white p-3 border-bottom">
-                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                        <h4>MCQ Quiz</h4><span>(5 of 20)</span>
+                    <div class="mcq">
+                        <h4>Passage</h4>
                     </div>
                 </div>
                 <div class="question bg-white p-3 border-bottom">
-                    <div>
-                        {!! $passage->passage !!}
+                    <div class="text-justify">
+                        <p class="pr-2" style="max-height: 46%; overflow-y: scroll">{!! $passage->passage !!}</p>
                     </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-5 col-lg-5">
+            <div class="border">
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                        <h4>Questions</h4><span>(5 of 20)</span>
+                    </div>
+                </div>
+                <div class="question bg-white p-3 border-bottom">
                     <div class="d-flex flex-row align-items-center question-title">
                         <h3 class="text-danger">Q.</h3>
                         <h5 class="mt-1 ml-2">Which of the following country has largest population?</h5>
