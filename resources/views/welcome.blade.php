@@ -32,8 +32,6 @@
                 <form method="post" action="{{route('mark')}}">
                     @csrf
                     <div style="max-height: 46%; overflow-y: scroll">
-
-
                         @foreach($questions as $index => $question)
                             <div class="question bg-white p-3 border-bottom">
                                 <div class="d-flex flex-row align-items-center question-title">
@@ -41,13 +39,14 @@
                                     <h5 class="mt-1 ml-2">{{$question->question}}</h5>
                                 </div>
 
-                                @foreach($question->options as $option)
+                                @foreach($question->options as $ind => $option)
                                     <div class="ans ml-2">
-                                        <label class="radio"> <input type="radio" name="question[]answer[]" value="{{$option->is_answer}}"> <span>{{$option->option}}</span>
+                                        <label class="radio">
+                                            <input type="radio" name="question{{$index}}" value="{{$option->is_answer}}"> <span>{{$option->option}}</span>
                                         </label>
                                     </div>
                                 @endforeach
-
+                                <input type="hidden" name="count" value="{{$index}}">
                             </div>
                         @endforeach
                     </div>
@@ -56,7 +55,7 @@
     {{--                        <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous--}}
     {{--                    </button>--}}
 
-                        <button class="btn btn-primary border-success align-items-center btn-success" type="button">
+                        <button class="btn btn-primary border-success align-items-center btn-success">
                             Submit<i class="fa fa-angle-right ml-2"></i>
                         </button>
                     </div>

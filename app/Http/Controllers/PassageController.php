@@ -71,7 +71,15 @@ class PassageController extends Controller
 
     public function mark(Request $request)
     {
+        $score = 0;
+        $count = $request->get('count');
 
+        for ($i = 0; $i <= $count; $i++){
+            if ($request->get('question'.$i) == 1){
+                $score += 1;
+            }
+        }
+        return view('result', compact(['score','count']));
     }
 
     public function destroy(Passage $passage)
