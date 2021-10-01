@@ -15,6 +15,7 @@ class CreatePassagesTable extends Migration
     {
         Schema::create('passages', function (Blueprint $table) {
             $table->id();
+
             $table->timestamps();
         });
     }

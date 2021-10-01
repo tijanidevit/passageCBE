@@ -9,4 +9,8 @@ class Passage extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function questions(){
+        return $this->hasMany(PassageQuestion::class);
+    }
 }

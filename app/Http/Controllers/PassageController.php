@@ -40,6 +40,7 @@ class PassageController extends Controller
         $passage_id = $passage->id;
 
         $questions = $passage->questions;
+        $questions->load('options');
         return view('welcome', compact('passage'));
     }
 
