@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\PassageController::class, 'show'] );
+Route::post('/', [\App\Http\Controllers\PassageController::class, 'mark'] )->name('mark');

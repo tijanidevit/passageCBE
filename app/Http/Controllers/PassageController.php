@@ -40,9 +40,10 @@ class PassageController extends Controller
         $passage_id = $passage->id;
 
         $questions = $passage->questions;
-        $qs = $passage->questions();
-        $qs->load('options');
-        return view('welcome', compact('passage'));
+        $questions_count = $questions->count();
+        $questions->load('options');
+
+        return view('welcome', compact(['passage','questions_count','questions']));
     }
 
     /**
@@ -68,12 +69,11 @@ class PassageController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Passage  $passage
-     * @return \Illuminate\Http\Response
-     */
+    public function mark(Request $request)
+    {
+
+    }
+
     public function destroy(Passage $passage)
     {
         //
